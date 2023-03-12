@@ -103,7 +103,7 @@ $conn->close();
 <body>
     
      <div id="center" >
-         <h1>Sistema supervisório</h1>
+         <h1>Sistema de monitoramento</h1>
     </div>
 
     <div id="graph1" >
