@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 } 
 
 $sql1 = "SELECT consumo, reading_time FROM MonitoramentoAgua WHERE DAY(reading_time) = DAY(DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 3 HOUR)) and month(reading_time)=month(DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 3 HOUR)) ORDER BY id ASC";
-$sql2= " SELECT SUM(consumo), day(reading_time) FROM `MonitoramentoAgua` where month(reading_time)=month(DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 3 HOUR)) group by day(reading_time)";
+$sql2= " SELECT SUM(consumo), day(reading_time) FROM `MonitoramentoAgua` where month(reading_time)=month(DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 3 HOUR)) and year(reading_time)=year (DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 3 HOUR)) group by day(reading_time)";
 $sql3 = " SELECT SUM(consumo), month(reading_time) FROM `MonitoramentoAgua` where year(reading_time)=year (DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 3 HOUR)) group by month(reading_time)";
 
 
